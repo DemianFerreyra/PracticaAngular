@@ -1,0 +1,15 @@
+<p>card works!</p>
+
+<div class="card" *ngFor="let item of countries">
+    <p>{{item.name}}</p>
+    <ol>
+        <li>min temperature: {{item.min}}</li>
+        <li>max temperature: {{item.max}}</li>
+    </ol>
+    <button (click)="deleteCountry(item.name)">X</button>
+</div>
+
+<form [formGroup]="form" (submit)="getCountry()" >
+    <input type="text" placeholder="Introduzca una ciudad..." formControlName="country">
+    <button>Buscar</button>
+</form>
